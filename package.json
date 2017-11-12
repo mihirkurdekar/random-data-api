@@ -1,0 +1,28 @@
+{
+    "name": "random-data-api",
+    "version": "1.0.0",
+    "description": "Application to create a random data with date using typescript.",
+    "main": "src/index.ts",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "tsc": "tsc"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mihirkurdekar/random-data-api.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/mihirkurdekar/random-data-api/issues"
+    },
+    "homepage": "https://github.com/mihirkurdekar/random-data-api#readme",
+    "dependencies": {
+        "express": "^4.16.2",
+        "typescript": "^2.6.1"
+    },
+    "devDependencies": {
+        "@types/node": "^8.0.51",
+        "typescript": "^2.6.1"
+    }
+}
