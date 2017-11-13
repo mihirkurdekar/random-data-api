@@ -4,8 +4,9 @@
     "description": "Application to create a random data with date using typescript.",
     "main": "src/index.ts",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "tsc": "tsc"
+        "tsc": "tsc",
+        "start": "npm run build:live",
+        "build:live": "nodemon --exec ./node_modules/.bin/ts-node -- ./src/index.ts"
     },
     "repository": {
         "type": "git",
@@ -19,6 +20,8 @@
     "homepage": "https://github.com/mihirkurdekar/random-data-api#readme",
     "dependencies": {
         "express": "^4.16.2",
+        "nodemon": "^1.12.1",
+        "ts-node": "^3.3.0",
         "typescript": "^2.6.1"
     },
     "devDependencies": {
