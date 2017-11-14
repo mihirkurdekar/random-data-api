@@ -9,6 +9,7 @@ class App {
 
   constructor() {
     this.express = express();
+    this.express.use(bodyParser.json());
     this.express.use(bodyParser.urlencoded({ extended: true }));
     this.mountRoutes();
   }
@@ -35,13 +36,14 @@ class App {
     });
 
     router.post('/randomdata', (req, res) => {
+      //console.log(req.body);
       let start: string = req.body['startDate'];
       let end: string = req.body['endDate'];
-      let response:Array<ChartData> = []
+      let response:Array<ChartData> = [];
       if (typeof start != undefined && start != null && end != undefined && end != null) {
         let startDate: Date = new Date(start);
         let endDate: Date = new Date(end);
-        console.log(""+startDate+endDate);
+        //console.log(""+startDate+endDate);
         let generateRandomDataService: GenerateRandomDataService = new GenerateRandomDataService();
         response = generateRandomDataService.generateData(startDate, endDate);
       }
