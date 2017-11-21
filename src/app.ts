@@ -1,7 +1,8 @@
 import * as express from 'express';
-import * as url from "url";
-import * as bodyParser from "body-parser";
-import { GenerateRandomDataService } from "./generate-random-data-service";
+import * as url from 'url';
+import * as cors from 'cors';
+import * as bodyParser from 'body-parser';
+import { GenerateRandomDataService } from './generate-random-data-service';
 import { ChartData } from './chart-data';
 
 class App {
@@ -11,6 +12,7 @@ class App {
     this.express = express();
     this.express.use(bodyParser.json());
     this.express.use(bodyParser.urlencoded({ extended: true }));
+    this.express.use(cors());
     this.mountRoutes();
   }
 
