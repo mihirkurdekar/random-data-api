@@ -1,13 +1,18 @@
 FROM node:carbon
 
-ENV PORT 3001
+# Create app directory
+WORKDIR /usr/src/app
 
-EXPOSE 3001
+# Install app dependencies
+# A wildcard is used to ensure both package.json AND package-lock.json are copied
+# where available (npm@5+)
+COPY package*.json ./
 
-COPY package.json package.json
 RUN npm install
-
+# If you are building your code for production
+# RUN npm install --only=production
+RUN npm run tsc
+# Bundle app source
 COPY . .
-RUN npm run build
-
-CMD ["node", "dist/"]
+EXPOSE 8080
+CMD [ "node", "dist/" ]
