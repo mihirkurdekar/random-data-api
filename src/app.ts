@@ -13,6 +13,7 @@ class App {
     this.express.use(bodyParser.json());
     this.express.use(bodyParser.urlencoded({ extended: true }));
     this.express.use(cors());
+    this.express.use(express.static('static'));
     this.mountRoutes();
   }
 
